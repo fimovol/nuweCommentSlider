@@ -4,7 +4,7 @@ Usar el HTML solo es la manera más rápida de mostrar algo en pantalla en compa
 # distribución de carpetas
 Este proyecto es solo un componente que muestra diferentes “opiniones” al darle a las flechas a los costados, es muy simple y por lo tanto solo tiene un único archivo que es el html
 
-# mpezar a trabajar o contribuir con la repo
+# empezar a trabajar o contribuir con la repo
 
 - primero el fork al repositorio
 - luego clonar el repo del fork
