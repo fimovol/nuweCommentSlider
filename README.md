@@ -15,4 +15,7 @@ Este proyecto es solo un componente que muestra diferentes “opiniones” al da
 # nuwe.io reto
 En NUWE podrás poner a prueba tus habilidades como developer con desafíos que simulan experiencias laborales reales. Asimismo, tu participación te ayudará a mejorar tu portafolio y a certificar tus habilidades de cara a las empresas tecnológicas
 
+# sitio web
+https://fimovol.github.io/nuweCommentSlider/
+
 # gracias por leer esto
