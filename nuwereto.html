@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contenedor{
+    overflow: hidden;
+	height: auto;
+}
+.list{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 500px;
+    background-color: rgb(19, 19, 19);
+}
+article{
+    width: 500px;
+    height: 400px;
+    position: relative;
+    background: rgb(43, 43, 43);
+    /* right: 0px; */
+    border-radius: 5px;
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.75);
+    margin-left: 50px;
+    margin-right: 50px;
+    transition: right cubic-bezier(0.19, 1, 0.22, 1) .1s;
+}
+header{
+    display: flex;
+    height: 120px;
+    align-items: center;
+}
+.imagen{
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.nombre{
+    text-transform: capitalize;
+    color: white;
+}
+
+p.comentario{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+}
+.btn{
+    position: relative;
+    display: inline-block;
+    top: -260px;
+    right: -10px;
+    user-select: none;
+    border: 1px rgb(105, 105, 105) solid;
+    border-radius: 10px;
+}
+.btnadelante{
+    right: -521px;
+}
+</style>
+<body>
+    <div class="contenedor">
+        <div class="list">
+            <article>
+                <header>
+                    <img class="imagen" 
+                        src="https://avatars.githubusercontent.com/u/73801451?v=4"
+                        alt="imagen"
+                        width="100px"
+                        height="100px">
+                    <span class="nombre">javier sanchez</span>
+                </header>
+                <section>
+                    <p class="comentario">typeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft. Es un superconjunto de JavaScript, que esencialmente añade tipos estáticos y obje</p>
+                </section>
+            </article>
+            <article>
+                <header>
+                    <img class="imagen" 
+                        src="https://avatars.githubusercontent.com/u/5766837?v=4"
+                        alt="imagen"
+                        width="100px"
+                        height="100px">
+                    <span class="nombre">elmer guerta</span>
+                </header>
+                <section>
+                    <p class="comentario">GraphQL es un lenguaje de consulta y manipulación de datos para APIs, y un entorno de ejecución para realizar consultas con datos existentes.​ GraphQL fue desarrollado internamente por Faceboo</p>
+                </section>
+            </article>
+            <article>
+                <header>
+                    <img class="imagen" 
+                        src="https://avatars.githubusercontent.com/u/49151?v=4"
+                        alt="imagen"
+                        width="100px"
+                        height="100px">
+                    <span class="nombre">pancho pistola</span>
+                </header>
+                <section>
+                    <p class="comentario">React es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y la comunidad de software li</p>
+                </section>
+            </article>
+        </div>
+        <div class="btn" onclick="atras()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#00aa00" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"/>
+            </svg>
+        </div>
+        <div class="btn btnadelante" onclick="adelante()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#00aa00" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+            </svg>
+        </div>
+    </div>
+    
+    <script>
+        const articulo = document.querySelectorAll("article")
+        
+        function atras(){
+            let elementStyle = window.getComputedStyle(articulo[0]);
+            let elementColor = elementStyle.getPropertyValue('right');
+            const newStr = elementColor.slice(0, -2)
+            const numero = parseInt(newStr);
+            if (numero <= 0) {
+                console.log("no entra a la CSSConditionRule!")
+                return
+            }
+            articulo.forEach(e => {
+                e.style.right = `${numero - 600}px`
+                console.log(e.style.right)
+            })
+        }
+        function adelante(){
+            let elementStyle = window.getComputedStyle(articulo[0]);
+            let elementColor = elementStyle.getPropertyValue('right');
+            const newStr = elementColor.slice(0, -2)
+            const numero = parseInt(newStr);
+            if (numero >= 1080) {
+                console.log("no entra a la CSSConditionRule!")
+                return
+            }
+            articulo.forEach(e => {
+                e.style.right = `${numero + 600}px`
+                console.log(e.style.right)
+            })
+        }
+    </script>
+</body>
+</html>
